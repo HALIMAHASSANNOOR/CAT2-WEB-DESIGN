@@ -1,0 +1,29 @@
+<script>
+// Prompt the user for employee details
+let employeeName = prompt("Enter employee name:");
+let hoursWorked = parseFloat(prompt("Enter hours worked:"));
+let ratePerHour = parseFloat(prompt("Enter rate per hour:"));
+
+// Calculate basic pay
+let basicPay = hoursWorked * ratePerHour;
+
+// Calculate tax based on basic pay
+let tax;
+if (basicPay > 50000) {
+    tax = 0.2 * basicPay;
+} else if (basicPay > 20000 && basicPay <= 50000) {
+    tax = 0.1 * basicPay;
+} else {
+    tax = null;
+}
+
+// Calculate net pay
+let netPay = basicPay - tax;
+
+// Display the results
+console.log(`Employee Name: ${employeeName}`);
+console.log(`Basic Pay: $${basicPay}`);
+console.log(`Tax: $${tax}`);
+console.log(`Net Pay: $${netPay}`);
+</script>
+
